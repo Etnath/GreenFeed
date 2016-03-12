@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenFeed", "GreenFeed\GreenFeed.csproj", "{D294CBD0-D7A9-4170-A3A7-288D84FA47D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenFeedTest", "GreenFeedTest\GreenFeedTest.csproj", "{3B6B7D9F-285A-4CBA-871B-6E8531DEF463}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenFeedHarness", "GreenFeedHarness\GreenFeedHarness.csproj", "{86F18E78-67C9-4509-9829-2EC8F62C23AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D294CBD0-D7A9-4170-A3A7-288D84FA47D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D294CBD0-D7A9-4170-A3A7-288D84FA47D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D294CBD0-D7A9-4170-A3A7-288D84FA47D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D294CBD0-D7A9-4170-A3A7-288D84FA47D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B6B7D9F-285A-4CBA-871B-6E8531DEF463}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B6B7D9F-285A-4CBA-871B-6E8531DEF463}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B6B7D9F-285A-4CBA-871B-6E8531DEF463}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B6B7D9F-285A-4CBA-871B-6E8531DEF463}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86F18E78-67C9-4509-9829-2EC8F62C23AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86F18E78-67C9-4509-9829-2EC8F62C23AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86F18E78-67C9-4509-9829-2EC8F62C23AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86F18E78-67C9-4509-9829-2EC8F62C23AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
