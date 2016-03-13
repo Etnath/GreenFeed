@@ -1,11 +1,14 @@
-﻿namespace GreenFeed.UI.RssFeedList
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace GreenFeed.UI.RssFeedList
 {
     partial class RssFeedListView
     {
         /// <summary> 
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary> 
         /// Clean up any resources being used.
@@ -82,8 +85,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button btAddFeed;
-        private System.Windows.Forms.ListBox lbRssFeeds;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Button btAddFeed;
+        private ListBox lbRssFeeds;
     }
 }

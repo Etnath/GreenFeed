@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GreenFeed.DataModel;
 
 namespace GreenFeed.UI.RssSettingsEditor
 {
@@ -11,10 +7,9 @@ namespace GreenFeed.UI.RssSettingsEditor
         private RssSettingsEditorView _view;
         private RssSettingsEditorModel _model;
 
-        public RssSettingsEditorPresenter(string name = "", string url = "")
+        public RssSettingsEditorPresenter(RssInfo rssInfo)
         {
-            _model = new RssSettingsEditorModel(name, url);
-
+            _model = new RssSettingsEditorModel(rssInfo);
         }
 
     }

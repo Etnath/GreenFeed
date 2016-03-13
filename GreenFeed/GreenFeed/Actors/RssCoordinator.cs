@@ -1,12 +1,9 @@
-﻿using Akka.Actor;
-using GreenFeed.Messages;
+﻿using System;
+using System.Collections.Generic;
+using Akka.Actor;
+using Akka.Util.Internal;
 using GreenFeed.Messages.Acknowledge;
 using GreenFeed.Messages.Commands;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GreenFeed.Actors
 {
@@ -23,15 +20,14 @@ namespace GreenFeed.Actors
 
         public void AddFeed(AddFeedCommand addFeedMessage, IActorRef sender)
         {
-            var feed = Context.ActorOf(Props.Create<RssFeed>(new object[] { addFeedMessage.Name, addFeedMessage.Url }));
+            var feed = Context.ActorOf(Props.Create<RssFeed>(new object[] { addFeedMessage.Name, addFeedMessage.Url }),addFeedMessage.Name);
             _feeds.Add(feed);
             sender.Tell(new AddFeedAcknowledge(_feeds.Count), Self);
-
         }
 
         public void RemoveFeed(RemoveFeedCommand removeFeedMessage, IActorRef sender)
         {
-            _feeds.RemoveWhere(f => ((RssFeed)f).Name == removeFeedMessage.Name);
+            _feeds.RemoveWhere(f => f.Path.Name == removeFeedMessage.Name);
             sender.Tell(new RemoveFeedAcknowledge(_feeds.Count), Self);
         }
     }

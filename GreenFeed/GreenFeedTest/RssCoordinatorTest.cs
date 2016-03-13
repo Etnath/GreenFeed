@@ -1,12 +1,9 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Akka.Actor;
-using GreenFeed.Actors;
-using GreenFeed.Messages;
-using System.Threading.Tasks;
+﻿using Akka.Actor;
 using Akka.TestKit.VsTest;
+using GreenFeed.Actors;
 using GreenFeed.Messages.Acknowledge;
 using GreenFeed.Messages.Commands;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace GreenFeedTest
 {

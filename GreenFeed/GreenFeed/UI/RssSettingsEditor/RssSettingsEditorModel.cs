@@ -1,21 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GreenFeed.DataModel;
 
 namespace GreenFeed.UI.RssSettingsEditor
 {
     public class RssSettingsEditorModel
     {
-        public string Name { get; }
-        public string Url { get; }
+        RssInfo RssInfo { get; set; }
 
-        public RssSettingsEditorModel(string name, string url)
+        public RssSettingsEditorModel(RssInfo rssInfo)
         {
-            Name = name;
-            Url = url;
+            RssInfo = rssInfo;
         }
     }
 }

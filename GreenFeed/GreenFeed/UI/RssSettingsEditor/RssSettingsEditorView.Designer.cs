@@ -1,11 +1,14 @@
-﻿namespace GreenFeed.UI.RssSettingsEditor
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace GreenFeed.UI.RssSettingsEditor
 {
     partial class RssSettingsEditorView
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -160,14 +163,14 @@
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button btOK;
-        private System.Windows.Forms.Button btCancel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label lbRssName;
-        private System.Windows.Forms.Label lbRssUrl;
-        private System.Windows.Forms.TextBox tbRssName;
-        private System.Windows.Forms.TextBox tbRssUrl;
+        private TableLayoutPanel tableLayoutPanel1;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Button btOK;
+        private Button btCancel;
+        private TableLayoutPanel tableLayoutPanel2;
+        private Label lbRssName;
+        private Label lbRssUrl;
+        private TextBox tbRssName;
+        private TextBox tbRssUrl;
     }
 }

@@ -57,6 +57,7 @@
     <Compile Include="Actors\RssCoordinator.cs" />
     <Compile Include="Actors\RssFeed.cs" />
     <Compile Include="Actors\RssParser.cs" />
+    <Compile Include="DataModel\RssInfo.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

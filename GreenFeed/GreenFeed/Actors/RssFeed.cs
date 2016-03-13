@@ -1,21 +1,15 @@
 ﻿using Akka.Actor;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using GreenFeed.DataModel;
 
 namespace GreenFeed.Actors
 {
     public class RssFeed : ReceiveActor
     {
-        public string Name;
-        public string Url;
+        public RssInfo RssInfo { get; set; }
 
-        public RssFeed(string name, string url)
+        public RssFeed(RssInfo rssInfo)
         {
-            Name = name;
-            Url = url;
+            RssInfo = rssInfo;
         }
     }
 }
