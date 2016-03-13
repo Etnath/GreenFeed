@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GreenFeed.UI.RssFeedList
 {
-    public partial class RssFeedList : UserControl
+    public partial class RssFeedListView : UserControl
     {
-        public RssFeedList()
+        public RssFeedListView()
         {
             InitializeComponent();
         }

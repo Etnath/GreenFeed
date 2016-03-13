@@ -7,8 +7,15 @@ using System.Threading.Tasks;
 
 namespace GreenFeed.UI.RssFeedList
 {
-    class RssFeedListPresenter
+    public class RssFeedListPresenter : ReceiveActor
     {
-        //private RssFeedListView _view
+        private RssFeedListView _view;
+        private RssFeedListModel _model;
+
+        public RssFeedListPresenter(IEnumerable<string> rssFeedNames = null)
+        {
+            _view = new RssFeedListView();
+            _model = new RssFeedListModel(rssFeedNames);
+        }
     }
 }
