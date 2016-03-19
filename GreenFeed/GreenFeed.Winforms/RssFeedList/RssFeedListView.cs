@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace GreenFeed.UI.RssFeedList
+namespace GreenFeed.Winforms.RssFeedList
 {
     public partial class RssFeedListView : UserControl
     {

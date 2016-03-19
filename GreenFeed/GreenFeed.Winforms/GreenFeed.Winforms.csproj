@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D294CBD0-D7A9-4170-A3A7-288D84FA47D5}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{AD1117D1-A2DE-4191-A120-9398945558AE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GreenFeed</RootNamespace>
-    <AssemblyName>GreenFeed</AssemblyName>
+    <RootNamespace>GreenFeed.Winforms</RootNamespace>
+    <AssemblyName>GreenFeed.Winforms</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,9 +32,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Akka, Version=1.0.6.16, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Akka.1.0.6\lib\net45\Akka.dll</HintPath>
@@ -57,17 +54,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Actors\RssCoordinator.cs" />
-    <Compile Include="Actors\RssFeed.cs" />
-    <Compile Include="Actors\RssParser.cs" />
-    <Compile Include="DataModel\RssInfo.cs" />
-    <Compile Include="Messages\Acknowledge\AddFeedAcknowledge.cs" />
-    <Compile Include="Messages\Acknowledge\IAcknowledge.cs" />
-    <Compile Include="Messages\Acknowledge\RemoveFeedAcknowledge.cs" />
-    <Compile Include="Messages\Acknowledge\Status.cs" />
-    <Compile Include="Messages\Commands\AddFeedCommand.cs" />
-    <Compile Include="Messages\Commands\RemoveFeedCommand.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RssFeedList\RssFeedListModel.cs" />
+    <Compile Include="RssFeedList\RssFeedListPresenter.cs" />
+    <Compile Include="RssFeedList\RssFeedListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RssFeedList\RssFeedListView.Designer.cs">
+      <DependentUpon>RssFeedListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RssSettingsEditor\RssSettingsEditorModel.cs" />
+    <Compile Include="RssSettingsEditor\RssSettingsEditorPresenter.cs" />
+    <Compile Include="RssSettingsEditor\RssSettingsEditorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RssSettingsEditor\RssSettingsEditorView.Designer.cs">
+      <DependentUpon>RssSettingsEditorView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -77,6 +90,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RssFeedList\RssFeedListView.resx">
+      <DependentUpon>RssFeedListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RssSettingsEditor\RssSettingsEditorView.resx">
+      <DependentUpon>RssSettingsEditorView.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -91,7 +110,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\GreenFeed\GreenFeed.csproj">
+      <Project>{d294cbd0-d7a9-4170-a3a7-288d84fa47d5}</Project>
+      <Name>GreenFeed</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

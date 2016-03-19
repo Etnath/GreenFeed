@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
-using GreenFeed.UI.RssFeedList;
+using GreenFeed.Winforms.RssFeedList;
 
-namespace GreenFeed
+namespace GreenFeed.Winforms
 {
     public partial class Form1 : Form
     {

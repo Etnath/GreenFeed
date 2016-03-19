@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace GreenFeed.UI.RssSettingsEditor
+namespace GreenFeed.Winforms.RssSettingsEditor
 {
     public partial class RssSettingsEditorView : Form
     {

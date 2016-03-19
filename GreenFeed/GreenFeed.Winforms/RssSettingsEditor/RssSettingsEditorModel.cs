@@ -1,6 +1,6 @@
 ﻿using GreenFeed.DataModel;
 
-namespace GreenFeed.UI.RssSettingsEditor
+namespace GreenFeed.Winforms.RssSettingsEditor
 {
     public class RssSettingsEditorModel
     {

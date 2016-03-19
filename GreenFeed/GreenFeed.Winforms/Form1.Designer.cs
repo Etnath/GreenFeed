@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace GreenFeed
+namespace GreenFeed.Winforms
 {
     partial class Form1
     {

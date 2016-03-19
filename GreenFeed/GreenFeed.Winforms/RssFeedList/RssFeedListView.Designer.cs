@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace GreenFeed.UI.RssFeedList
+namespace GreenFeed.Winforms.RssFeedList
 {
     partial class RssFeedListView
     {

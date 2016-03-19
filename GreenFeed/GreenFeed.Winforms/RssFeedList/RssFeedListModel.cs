@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace GreenFeed.UI.RssFeedList
+namespace GreenFeed.Winforms.RssFeedList
 {
     public class RssFeedListModel
     {

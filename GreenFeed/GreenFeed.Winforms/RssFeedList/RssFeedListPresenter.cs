@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Akka.Actor;
 
-namespace GreenFeed.UI.RssFeedList
+namespace GreenFeed.Winforms.RssFeedList
 {
     public class RssFeedListPresenter : ReceiveActor
     {
