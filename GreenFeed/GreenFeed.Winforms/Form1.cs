@@ -10,11 +10,8 @@ namespace GreenFeed.Winforms
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            _rssFeedListPresenter = new RssFeedListPresenter();
+            splitContainer1.Panel1.Controls.Add(_rssFeedListPresenter.View);
         }
     }
 }
