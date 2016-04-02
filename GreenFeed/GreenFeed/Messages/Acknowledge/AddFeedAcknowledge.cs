@@ -4,7 +4,7 @@
     {
         public AddFeedAcknowledge(int feedCount, bool isSuccess = true, Status status = Status.Ok)
         {
-            IsSuccess = IsSuccess;
+            IsSuccess = isSuccess;
             FeedCount = feedCount;
             Status = status;
         }

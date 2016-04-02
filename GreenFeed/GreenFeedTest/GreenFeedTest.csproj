@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RssCoordinatorTest.cs" />
+    <Compile Include="RssGetterTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GreenFeed\GreenFeed.csproj">

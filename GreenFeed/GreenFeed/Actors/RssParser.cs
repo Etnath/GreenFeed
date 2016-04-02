@@ -2,7 +2,8 @@
 
 namespace GreenFeed.Actors
 {
-    class RssParser : ReceiveActor
+    public class RssParser : ReceiveActor
     {
+
     }
 }

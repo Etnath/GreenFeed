@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <generator>RSS Builder by B!Soft</generator>
+    <title>Test Feed</title>
+    <link>127.0.1.0</link>
+    <description>This is a test feed</description>
+    <language>en-us</language>
+    <managingEditor>test.test@test.com</managingEditor>
+    <webMaster>test.test@test.com</webMaster>
+    <item>
+      <title>test1</title>
+      <pubDate>Sat, 2 Apr 2016 17:48:24 +0200</pubDate>
+      <author>test.test@test.com</author>
+      <comments>warningm this is a test.</comments>
+      <category>test</category>
+      <description><![CDATA[Hello there]]></description>
+    </item>
+  </channel>
+</rss>
