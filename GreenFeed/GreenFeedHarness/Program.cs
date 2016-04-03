@@ -21,7 +21,7 @@ namespace GreenFeedHarness
 
             _rssCoordinator.Tell(new AddFeedCommand("piou", "uoip"));
             _rssCoordinator.Tell(new RemoveFeedCommand("piou"));
-            _rssGetter.Tell(new QueryRssFeedCommand());
+            _rssGetter.Tell(new QueryFeedCommand());
             
             Console.ReadLine();
         }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ServiceModel.Syndication;
 
 namespace GreenFeed.DataModel
 {
@@ -11,11 +6,13 @@ namespace GreenFeed.DataModel
     {
         public string Name { get; }
         public string Url { get; }
+        public SyndicationFeed FeedData { get; set; }
 
         public RssInfo(string name = "", string url = "")
         {
             Name = name;
             Url = url;
+            FeedData = null;
         }
 
         public RssInfo(RssInfo rssInfo)

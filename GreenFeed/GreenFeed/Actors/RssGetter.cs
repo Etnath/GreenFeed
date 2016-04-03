@@ -16,10 +16,10 @@ namespace GreenFeed.Actors
         {
             _url = url;
 
-            Receive<QueryRssFeedCommand>(f => Query(f, Sender));
+            Receive<QueryFeedCommand>(f => Query(f, Sender));
         }
 
-        private void Query(QueryRssFeedCommand queryRssFeed,IActorRef sender)
+        private void Query(QueryFeedCommand queryRssFeed,IActorRef sender)
         {
             try
             {
@@ -30,9 +30,9 @@ namespace GreenFeed.Actors
             }
             catch (Exception)
             {
-                sender.Tell(new QueryRssFeedAcknowledge(false, Status.Failed), Self);
+                sender.Tell(new QueryFeedAcknowledge(false, Status.Failed), Self);
             }           
-            sender.Tell(new QueryRssFeedAcknowledge(), Self);
+            sender.Tell(new QueryFeedAcknowledge(), Self);
         }
     }
 }

@@ -63,14 +63,17 @@
     <Compile Include="Actors\RssGetter.cs" />
     <Compile Include="Actors\RssParser.cs" />
     <Compile Include="DataModel\RssInfo.cs" />
+    <Compile Include="Messages\Acknowledge\Acknowledge.cs" />
     <Compile Include="Messages\Acknowledge\AddFeedAcknowledge.cs" />
     <Compile Include="Messages\Acknowledge\IAcknowledge.cs" />
-    <Compile Include="Messages\Acknowledge\QueryRssFeedAcknowledge.cs" />
+    <Compile Include="Messages\Acknowledge\QueryFeedAcknowledge.cs" />
     <Compile Include="Messages\Acknowledge\RemoveFeedAcknowledge.cs" />
     <Compile Include="Messages\Acknowledge\Status.cs" />
+    <Compile Include="Messages\Acknowledge\UpdateFeedAcknowledge.cs" />
     <Compile Include="Messages\Commands\AddFeedCommand.cs" />
-    <Compile Include="Messages\Commands\QueryRssFeedCommand.cs" />
+    <Compile Include="Messages\Commands\QueryFeedCommand.cs" />
     <Compile Include="Messages\Commands\RemoveFeedCommand.cs" />
+    <Compile Include="Messages\Commands\UpdateFeedCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

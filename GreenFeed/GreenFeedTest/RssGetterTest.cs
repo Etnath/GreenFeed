@@ -24,8 +24,8 @@ namespace GreenFeedTest
         [TestMethod]
         public void QueryRssUrlTest()
         {
-           _rssGetter.Tell(new QueryRssFeedCommand());
-            ExpectMsg<QueryRssFeedAcknowledge>(f => f.IsSuccess);
+           _rssGetter.Tell(new QueryFeedCommand());
+            ExpectMsg<QueryFeedAcknowledge>(f => f.IsSuccess && f.FeedData != null);
         }
     }
 }
