@@ -4,6 +4,7 @@ using Akka.Actor;
 using Akka.Util.Internal;
 using GreenFeed.Messages.Acknowledge;
 using GreenFeed.Messages.Commands;
+using GreenFeed.DataModel;
 
 namespace GreenFeed.Actors
 {
@@ -14,13 +15,18 @@ namespace GreenFeed.Actors
         public RssCoordinator()
         {
             _feeds = new HashSet<IActorRef>();
+
             Receive<AddFeedCommand>(f => AddFeed(f, Sender));
             Receive<RemoveFeedCommand>(f => RemoveFeed(f, Sender));
+
+            SubscribeFeedsToUpdate();   
         }
 
         public void AddFeed(AddFeedCommand addFeedMessage, IActorRef sender)
         {
-            var feed = Context.ActorOf(Props.Create<RssFeed>(new object[] { addFeedMessage.Name, addFeedMessage.Url }),addFeedMessage.Name);
+            Props props = Props.Create<RssFeed>(new object[] { new RssInfo(addFeedMessage.Name, addFeedMessage.Url) });
+            var feed = Context.ActorOf(props , addFeedMessage.Name);
+            SubscribeFeedToUpdate(feed);
             _feeds.Add(feed);
             sender.Tell(new AddFeedAcknowledge(_feeds.Count), Self);
         }
@@ -29,6 +35,23 @@ namespace GreenFeed.Actors
         {
             _feeds.RemoveWhere(f => f.Path.Name == removeFeedMessage.Name);
             sender.Tell(new RemoveFeedAcknowledge(_feeds.Count), Self);
+        }
+
+        private void SubscribeFeedsToUpdate()
+        {
+            foreach (var actor in _feeds)
+            {
+                SubscribeFeedToUpdate(actor);
+            }
+        }
+
+        private void SubscribeFeedToUpdate(IActorRef actor)
+        {
+            Context.System.Scheduler.ScheduleTellRepeatedly(TimeSpan.FromSeconds(1),
+                                                            TimeSpan.FromMinutes(1),
+                                                            actor,
+                                                            new UpdateFeedCommand(),
+                                                            Self);
         }
     }
 }

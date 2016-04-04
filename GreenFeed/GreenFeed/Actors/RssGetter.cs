@@ -26,13 +26,13 @@ namespace GreenFeed.Actors
                 using (var reader = XmlReader.Create(_url))
                 {
                     var data = SyndicationFeed.Load(reader);
+                    sender.Tell(new QueryFeedAcknowledge(true, Status.Ok, data), Self);
                 }
             }
             catch (Exception)
             {
                 sender.Tell(new QueryFeedAcknowledge(false, Status.Failed), Self);
-            }           
-            sender.Tell(new QueryFeedAcknowledge(), Self);
+            }                      
         }
     }
 }
