@@ -55,10 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\RssFeedInfo.cs" />
     <Compile Include="ViewModel\RssFeedListViewModel.cs" />
+    <Compile Include="ViewModel\RssPageViewModel.cs" />
     <Compile Include="ViewModel\RssSettingsEditorViewModel.cs" />
     <Compile Include="View\RssFeedList.xaml.cs">
       <DependentUpon>RssFeedList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RssPage.xaml.cs">
+      <DependentUpon>RssPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RssSettingsEditor.xaml.cs">
       <DependentUpon>RssSettingsEditor.xaml</DependentUpon>
@@ -76,6 +81,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\RssFeedList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RssPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -110,6 +119,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GreenFeed.Utilities\GreenFeed.Utilities.csproj">
+      <Project>{86a2924e-e942-4352-a6a7-bdcaa734d75c}</Project>
+      <Name>GreenFeed.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

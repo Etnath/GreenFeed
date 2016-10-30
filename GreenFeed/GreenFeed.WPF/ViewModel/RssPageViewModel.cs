@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace GreenFeed.WPF.ViewModel
 {
-    public class RssSettingsEditorViewModel
+    public class RssPageViewModel
     {
-
     }
 }
