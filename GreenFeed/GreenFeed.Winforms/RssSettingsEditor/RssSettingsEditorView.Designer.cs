@@ -66,9 +66,9 @@ namespace GreenFeed.Winforms.RssSettingsEditor
             this.flowLayoutPanel1.Controls.Add(this.btCancel);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 59);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 58);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(350, 26);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(350, 27);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btOK
@@ -104,7 +104,7 @@ namespace GreenFeed.Winforms.RssSettingsEditor
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(350, 50);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(350, 49);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // lbRssName
@@ -113,7 +113,7 @@ namespace GreenFeed.Winforms.RssSettingsEditor
             this.lbRssName.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbRssName.Location = new System.Drawing.Point(82, 0);
             this.lbRssName.Name = "lbRssName";
-            this.lbRssName.Size = new System.Drawing.Size(38, 25);
+            this.lbRssName.Size = new System.Drawing.Size(38, 24);
             this.lbRssName.TabIndex = 0;
             this.lbRssName.Text = "Name:";
             this.lbRssName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -122,7 +122,7 @@ namespace GreenFeed.Winforms.RssSettingsEditor
             // 
             this.lbRssUrl.AutoSize = true;
             this.lbRssUrl.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lbRssUrl.Location = new System.Drawing.Point(97, 25);
+            this.lbRssUrl.Location = new System.Drawing.Point(97, 24);
             this.lbRssUrl.Name = "lbRssUrl";
             this.lbRssUrl.Size = new System.Drawing.Size(23, 25);
             this.lbRssUrl.TabIndex = 1;
@@ -140,7 +140,7 @@ namespace GreenFeed.Winforms.RssSettingsEditor
             // tbRssUrl
             // 
             this.tbRssUrl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbRssUrl.Location = new System.Drawing.Point(126, 28);
+            this.tbRssUrl.Location = new System.Drawing.Point(126, 27);
             this.tbRssUrl.Name = "tbRssUrl";
             this.tbRssUrl.Size = new System.Drawing.Size(221, 20);
             this.tbRssUrl.TabIndex = 3;
