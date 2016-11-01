@@ -11,5 +11,12 @@ namespace GreenFeed.WPF.ViewModel
     public class RssFeedListViewModel
     {
         public ObservableCollection<RssFeedInfo> RssFeedInfo { get; set; }
+        public RssFeedInfo SelectedRss { get; set; }
+
+        public RssFeedListViewModel()
+        {
+            RssFeedInfo = new ObservableCollection<Model.RssFeedInfo>();
+            RssFeedInfo.Add(new RssFeedInfo() { Name = "Test" });
+        }
     }
 }

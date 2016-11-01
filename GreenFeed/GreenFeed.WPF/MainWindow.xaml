@@ -9,6 +9,6 @@
         Title="MainWindow" Height="350" Width="525">
     <DockPanel>
         <view:RssFeedList DockPanel.Dock="Left"/>
-        
+        <view:RssPage />
     </DockPanel>
 </Window>
