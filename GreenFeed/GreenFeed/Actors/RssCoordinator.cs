@@ -18,7 +18,6 @@ namespace GreenFeed.Actors
 
             Receive<AddFeedCommand>(f => AddFeed(f, Sender));
             Receive<RemoveFeedCommand>(f => RemoveFeed(f, Sender));
-
             SubscribeFeedsToUpdate();   
         }
 
@@ -35,6 +34,16 @@ namespace GreenFeed.Actors
         {
             _feeds.RemoveWhere(f => f.Path.Name == removeFeedMessage.Name);
             sender.Tell(new RemoveFeedAcknowledge(_feeds.Count), Self);
+        }
+
+        public IList<RssInfo> GetFeedList()
+        {
+            throw new NotImplementedException();
+        }
+
+        public RssInfo GetFeed()
+        {
+            throw new NotImplementedException();
         }
 
         private void SubscribeFeedsToUpdate()

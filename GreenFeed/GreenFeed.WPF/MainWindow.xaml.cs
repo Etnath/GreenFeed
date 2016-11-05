@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Akka.Actor;
+using GreenFeed.Actors;
+using GreenFeed.WPF.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +23,14 @@ namespace GreenFeed.WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        private IActorRef _rssCoordinator;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            MainWindowViewModel vm = new MainWindowViewModel();
+            DataContext = vm;
         }
     }
 }

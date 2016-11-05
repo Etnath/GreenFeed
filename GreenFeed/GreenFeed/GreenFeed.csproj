@@ -65,13 +65,17 @@
     <Compile Include="DataModel\RssInfo.cs" />
     <Compile Include="Messages\Acknowledge\Acknowledge.cs" />
     <Compile Include="Messages\Acknowledge\AddFeedAcknowledge.cs" />
+    <Compile Include="Messages\Acknowledge\GetFeedInfoAcknowledge.cs" />
+    <Compile Include="Messages\Acknowledge\GetFeedListAcknowledge.cs" />
     <Compile Include="Messages\Acknowledge\IAcknowledge.cs" />
     <Compile Include="Messages\Acknowledge\QueryFeedAcknowledge.cs" />
     <Compile Include="Messages\Acknowledge\RemoveFeedAcknowledge.cs" />
     <Compile Include="Messages\Acknowledge\Status.cs" />
     <Compile Include="Messages\Acknowledge\UpdateFeedAcknowledge.cs" />
     <Compile Include="Messages\Commands\AddFeedCommand.cs" />
+    <Compile Include="Messages\Commands\GetFeedInfoCommand.cs" />
     <Compile Include="Messages\Commands\QueryFeedCommand.cs" />
+    <Compile Include="Messages\Commands\GetFeedListCommand.cs" />
     <Compile Include="Messages\Commands\RemoveFeedCommand.cs" />
     <Compile Include="Messages\Commands\UpdateFeedCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

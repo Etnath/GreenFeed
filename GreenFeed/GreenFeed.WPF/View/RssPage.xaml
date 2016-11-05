@@ -8,12 +8,16 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.DataContext>
-        <ViewModel:RssPageViewModel/>
+        <ViewModel:MainWindowViewModel/>
     </UserControl.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{Binding RssInfo.Name}"/>
+        <TextBlock Text="{Binding SelectedRss.Name}">
+            <TextBlock.DataContext>
+                <ViewModel:MainWindowViewModel/>
+            </TextBlock.DataContext>
+        </TextBlock>
     </Grid>
 </UserControl>
