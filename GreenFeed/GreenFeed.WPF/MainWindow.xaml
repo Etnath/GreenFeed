@@ -5,13 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GreenFeed.WPF"
         xmlns:view="clr-namespace:GreenFeed.WPF.View"
-        xmlns:ViewModel="clr-namespace:GreenFeed.WPF.ViewModel" x:Class="GreenFeed.WPF.MainWindow"
+        xmlns:ViewModel="clr-namespace:GreenFeed.WPF.ViewModel" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" x:Class="GreenFeed.WPF.MainWindow"
         mc:Ignorable="d"
         Title="GreenFeed" Height="350" Width="525">
     <Window.DataContext>
         <ViewModel:MainWindowViewModel/>
     </Window.DataContext>
     <DockPanel>
+        <Menu x:Name="menu" DockPanel.Dock="Top">
+            <MenuItem Header="Feeds">
+                <MenuItem Header="New Feed">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <ei:CallMethodAction TargetObject="{Binding Mode=OneWay}" MethodName="AddFeed"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
         <view:RssFeedList x:Name="RssFeedList" DockPanel.Dock="Left"/>
         <view:RssPage x:Name="RssPage" />
     </DockPanel>

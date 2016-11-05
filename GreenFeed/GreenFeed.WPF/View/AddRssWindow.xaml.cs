@@ -18,9 +18,9 @@ namespace GreenFeed.WPF.View
     /// <summary>
     /// Interaction logic for RssSettingsEditor.xaml
     /// </summary>
-    public partial class RssSettingsEditor : UserControl
+    public partial class AddRssWindow : Window
     {
-        public RssSettingsEditor()
+        public AddRssWindow()
         {
             InitializeComponent();
         }
