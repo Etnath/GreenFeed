@@ -7,17 +7,11 @@
              xmlns:ViewModel="clr-namespace:GreenFeed.WPF.ViewModel" x:Class="GreenFeed.WPF.View.RssPage"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <UserControl.DataContext>
-        <ViewModel:MainWindowViewModel/>
-    </UserControl.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Text="{Binding SelectedRss.Name}">
-            <TextBlock.DataContext>
-                <ViewModel:MainWindowViewModel/>
-            </TextBlock.DataContext>
         </TextBlock>
     </Grid>
 </UserControl>

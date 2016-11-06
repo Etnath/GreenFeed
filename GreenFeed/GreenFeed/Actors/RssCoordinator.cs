@@ -18,13 +18,14 @@ namespace GreenFeed.Actors
 
             Receive<AddFeedCommand>(f => AddFeed(f, Sender));
             Receive<RemoveFeedCommand>(f => RemoveFeed(f, Sender));
-            Receive<GetFeedInfoCommand>(f => GetFeedList(Sender));
+            Receive<GetFeedListCommand>(f => GetFeedList(Sender));
+            Receive<Failure>(f => LogFailure(f, Sender));
             SubscribeFeedsToUpdate();   
         }
 
         public void AddFeed(AddFeedCommand addFeedMessage, IActorRef sender)
         {
-            Props props = Props.Create<RssFeed>(new object[] { new RssFeedData(new RssInfo(addFeedMessage.Name, addFeedMessage.Url)) });
+            Props props = Props.Create<RssFeed>(new object[] { new RssInfo(addFeedMessage.Name, addFeedMessage.Url) });
             var feed = Context.ActorOf(props , addFeedMessage.Name);
             SubscribeFeedToUpdate(feed);
             _feeds.Add(feed);
@@ -39,9 +40,9 @@ namespace GreenFeed.Actors
 
         public void GetFeedList(IActorRef sender)
         {
-            _feeds.ForEach(f => f.Ask<GetFeedInfoAcknowledge>(new GetFeedInfoCommand()));
-            GetFeedInfoAcknowledge ack = new GetFeedInfoAcknowledge();
-            Sender.Tell(ack, Self);
+            IList<RssInfo> rssInfos = new List<RssInfo>();
+            _feeds.ForEach(f => rssInfos.Add(f.Ask<GetFeedInfoAcknowledge>(new GetFeedInfoCommand()).Result.RssFeed));
+            Sender.Tell(new GetFeedListAcknowledge(rssInfos), Self);
         }
 
         public RssFeedData GetFeed()
@@ -64,6 +65,11 @@ namespace GreenFeed.Actors
                                                             actor,
                                                             new UpdateFeedCommand(),
                                                             Self);
+        }
+
+        private void LogFailure(Failure failure, IActorRef Sender)
+        {
+            Console.WriteLine(Sender.Path + " failed: " + failure.Exception.ToString());
         }
     }
 }

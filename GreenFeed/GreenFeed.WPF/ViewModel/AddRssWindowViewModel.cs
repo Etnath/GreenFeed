@@ -24,6 +24,8 @@ namespace GreenFeed.WPF.ViewModel
 
         public AddRssWindowViewModel(IFeedRepository repository)
         {
+            RssName = string.Empty;
+            RssUrl = string.Empty;
             _repository = repository;
         }
 

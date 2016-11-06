@@ -9,14 +9,10 @@ namespace GreenFeed.WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        private IActorRef _rssCoordinator;
 
         public MainWindow()
         {
             InitializeComponent();
-
-            MainWindowViewModel vm = new MainWindowViewModel();
-            DataContext = vm;
         }
     }
 }

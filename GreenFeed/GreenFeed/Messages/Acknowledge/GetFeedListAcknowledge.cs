@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GreenFeed.DataModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,11 @@ namespace GreenFeed.Messages.Acknowledge
 {
     public class GetFeedListAcknowledge
     {
+        public IList<RssInfo> RssFeeds { get; set; }
+
+        public GetFeedListAcknowledge(IList<RssInfo> rssFeeds = null)
+        {
+            RssFeeds = rssFeeds;
+        }
     }
 }

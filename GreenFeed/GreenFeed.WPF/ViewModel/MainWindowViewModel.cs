@@ -22,8 +22,8 @@ namespace GreenFeed.WPF.ViewModel
             var _sys = ActorSystem.Create("test");
             Props rssCoordinatorProps = Props.Create<RssCoordinator>();
             _rssCoordinator = _sys.ActorOf(rssCoordinatorProps);
-            _repository = new FeedRepository(_rssCoordinator.Ask<GetFeedInfoAcknowledge>(new GetFeedInfoCommand()).Result.RssFeed);
-            
+            _repository = new FeedRepository(_rssCoordinator.Ask<GetFeedListAcknowledge>(new GetFeedListCommand()).Result.RssFeeds);
+            RssFeedInfo = new ObservableCollection<RssInfo>(_repository.RssFeeds);
         }
 
         public void AddFeed()
@@ -34,7 +34,12 @@ namespace GreenFeed.WPF.ViewModel
             if (window.ShowDialog().Value)
             {
                 _rssCoordinator.Ask<AddFeedCommand>(new AddFeedCommand(addRssVm.RssName, addRssVm.RssUrl));
-                _repository = new FeedRepository(_rssCoordinator.Ask<GetFeedInfoAcknowledge>(new GetFeedInfoCommand()).Result.RssFeed);
+                _repository = new FeedRepository(_rssCoordinator.Ask<GetFeedListAcknowledge>(new GetFeedListCommand()).Result.RssFeeds);
+                RssFeedInfo.Clear();
+                foreach (var feedInfo in _repository.RssFeeds)
+                {
+                    RssFeedInfo.Add(feedInfo);
+                }
             }
 
         }

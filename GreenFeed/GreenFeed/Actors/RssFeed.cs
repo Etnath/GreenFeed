@@ -8,16 +8,19 @@ namespace GreenFeed.Actors
     public class RssFeed : ReceiveActor
     {
         private IActorRef _rssGetter;
-        public RssFeedData RssData { get; set; }
 
+        public RssFeedData RssData { get; set; }
         public RssFeed(RssInfo rssInfo)
         {
-            RssFeedData RssData = new RssFeedData(rssInfo);
+            
             Props rssGetterProp = Props.Create<RssGetter>(new object[] { rssInfo.Url });
             _rssGetter = Context.System.ActorOf(rssGetterProp);
 
             Receive<UpdateFeedCommand>(f => Update(f, Sender));
             Receive<QueryFeedAcknowledge>(f => UpdateFeed(f, Sender));
+            Receive<GetFeedInfoCommand>(f => GetFeedInfo(f, Sender));
+
+            RssData = new RssFeedData(rssInfo);
         }
 
         private void Update(UpdateFeedCommand updateRssFeed, IActorRef sender)
@@ -42,6 +45,11 @@ namespace GreenFeed.Actors
             {
                 //TODO log
             }
+        }
+
+        private void GetFeedInfo(GetFeedInfoCommand getFeedInfoCommand, IActorRef sender)
+        {
+            sender.Tell(new GetFeedInfoAcknowledge(RssData.RssInfo), Self);
         }
     }
 }

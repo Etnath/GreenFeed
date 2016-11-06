@@ -6,10 +6,7 @@
              xmlns:local="clr-namespace:GreenFeed.WPF.View"
              xmlns:ViewModel="clr-namespace:GreenFeed.WPF.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="654" d:DesignWidth="300">
-    <UserControl.DataContext>
-        <ViewModel:MainWindowViewModel/>
-    </UserControl.DataContext>
+             d:DesignHeight="654" d:DesignWidth="300" MinWidth="300">
 
-    <ListBox ItemsSource="{Binding RssFeedInfo, Mode=TwoWay}"/>
+    <ListBox ItemsSource="{Binding RssFeedInfo, Mode=TwoWay}" MinWidth="300"/>
 </UserControl>
