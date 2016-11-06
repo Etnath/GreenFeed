@@ -70,6 +70,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\RssFeedInfo.cs" />
+    <Compile Include="Repository\FeedRepository.cs" />
     <Compile Include="Repository\IFeedRepository.cs" />
     <Compile Include="ViewModel\AddRssWindowViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />

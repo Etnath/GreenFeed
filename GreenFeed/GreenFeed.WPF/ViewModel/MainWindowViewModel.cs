@@ -1,5 +1,7 @@
 ﻿using Akka.Actor;
 using GreenFeed.Actors;
+using GreenFeed.Messages.Acknowledge;
+using GreenFeed.Messages.Commands;
 using GreenFeed.WPF.Model;
 using GreenFeed.WPF.Repository;
 using GreenFeed.WPF.View;
@@ -25,6 +27,10 @@ namespace GreenFeed.WPF.ViewModel
             var _sys = ActorSystem.Create("test");
             Props rssCoordinatorProps = Props.Create<RssCoordinator>();
             _rssCoordinator = _sys.ActorOf(rssCoordinatorProps);
+            var t = _rssCoordinator.Ask<GetFeedInfoAcknowledge>(new GetFeedInfoCommand());
+            var ad = t.Result;
+            //_repository = new FeedRepository(ad.RssFeed);
+            
         }
 
         public void AddFeed()
