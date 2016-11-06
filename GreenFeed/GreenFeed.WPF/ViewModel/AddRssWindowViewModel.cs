@@ -1,10 +1,6 @@
-﻿using GreenFeed.Utilities;
+﻿using GreenFeed.DataModel;
+using GreenFeed.Utilities;
 using GreenFeed.WPF.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GreenFeed.WPF.ViewModel
 {
@@ -43,7 +39,7 @@ namespace GreenFeed.WPF.ViewModel
 
         public void Ok()
         {
-            _repository?.RssFeeds.Add(new Model.RssFeedInfo() { Name = RssName, Url = RssUrl });
+            _repository?.RssFeeds.Add(new RssInfo() { Name = RssName, Url = RssUrl });
         }
     }
 }

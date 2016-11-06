@@ -8,11 +8,11 @@ namespace GreenFeed.Actors
     public class RssFeed : ReceiveActor
     {
         private IActorRef _rssGetter;
-        public RssInfo RssInfo { get; set; }
+        public RssFeedData RssData { get; set; }
 
         public RssFeed(RssInfo rssInfo)
         {
-            RssInfo = rssInfo;
+            RssFeedData RssData = new RssFeedData(rssInfo);
             Props rssGetterProp = Props.Create<RssGetter>(new object[] { rssInfo.Url });
             _rssGetter = Context.System.ActorOf(rssGetterProp);
 
@@ -31,7 +31,7 @@ namespace GreenFeed.Actors
             {
                 if (updateRssFeed.FeedData != null)
                 {
-                    RssInfo.FeedData = updateRssFeed.FeedData;
+                    RssData.FeedData = updateRssFeed.FeedData;
                 }
                 else
                 {

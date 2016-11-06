@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenFeedTest", "GreenFeedT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenFeedHarness", "GreenFeedHarness\GreenFeedHarness.csproj", "{86F18E78-67C9-4509-9829-2EC8F62C23AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenFeed.Winforms", "GreenFeed.Winforms\GreenFeed.Winforms.csproj", "{AD1117D1-A2DE-4191-A120-9398945558AE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenFeed.WPF", "GreenFeed.WPF\GreenFeed.WPF.csproj", "{2C6237A2-916C-4181-85CD-74541D7D4221}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenFeed.Utilities", "GreenFeed.Utilities\GreenFeed.Utilities.csproj", "{86A2924E-E942-4352-A6A7-BDCAA734D75C}"
@@ -33,10 +31,6 @@ Global
 		{86F18E78-67C9-4509-9829-2EC8F62C23AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86F18E78-67C9-4509-9829-2EC8F62C23AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86F18E78-67C9-4509-9829-2EC8F62C23AD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AD1117D1-A2DE-4191-A120-9398945558AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AD1117D1-A2DE-4191-A120-9398945558AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AD1117D1-A2DE-4191-A120-9398945558AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AD1117D1-A2DE-4191-A120-9398945558AE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2C6237A2-916C-4181-85CD-74541D7D4221}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2C6237A2-916C-4181-85CD-74541D7D4221}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C6237A2-916C-4181-85CD-74541D7D4221}.Release|Any CPU.ActiveCfg = Release|Any CPU

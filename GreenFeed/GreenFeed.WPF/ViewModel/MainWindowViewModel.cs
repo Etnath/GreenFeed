@@ -1,16 +1,11 @@
 ﻿using Akka.Actor;
 using GreenFeed.Actors;
+using GreenFeed.DataModel;
 using GreenFeed.Messages.Acknowledge;
 using GreenFeed.Messages.Commands;
-using GreenFeed.WPF.Model;
 using GreenFeed.WPF.Repository;
 using GreenFeed.WPF.View;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GreenFeed.WPF.ViewModel
 {
@@ -19,17 +14,15 @@ namespace GreenFeed.WPF.ViewModel
         private IActorRef _rssCoordinator;
         private IFeedRepository _repository;
 
-        public ObservableCollection<RssFeedInfo> RssFeedInfo { get; set; }
-        public RssFeedInfo SelectedRss { get; set; }
+        public ObservableCollection<RssInfo> RssFeedInfo { get; set; }
+        public RssInfo SelectedRss { get; set; }
 
         public MainWindowViewModel()
         {
             var _sys = ActorSystem.Create("test");
             Props rssCoordinatorProps = Props.Create<RssCoordinator>();
             _rssCoordinator = _sys.ActorOf(rssCoordinatorProps);
-            var t = _rssCoordinator.Ask<GetFeedInfoAcknowledge>(new GetFeedInfoCommand());
-            var ad = t.Result;
-            //_repository = new FeedRepository(ad.RssFeed);
+            _repository = new FeedRepository(_rssCoordinator.Ask<GetFeedInfoAcknowledge>(new GetFeedInfoCommand()).Result.RssFeed);
             
         }
 
@@ -40,7 +33,8 @@ namespace GreenFeed.WPF.ViewModel
             window.DataContext = addRssVm;
             if (window.ShowDialog().Value)
             {
-
+                _rssCoordinator.Ask<AddFeedCommand>(new AddFeedCommand(addRssVm.RssName, addRssVm.RssUrl));
+                _repository = new FeedRepository(_rssCoordinator.Ask<GetFeedInfoAcknowledge>(new GetFeedInfoCommand()).Result.RssFeed);
             }
 
         }

@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:GreenFeed.WPF.View"
              xmlns:ViewModel="clr-namespace:GreenFeed.WPF.ViewModel" x:Class="GreenFeed.WPF.View.AddRssWindow"
              mc:Ignorable="d" 
-             d:DesignHeight="158.491" d:DesignWidth="300">
+             d:DesignHeight="121.455" d:DesignWidth="300">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>

@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GreenFeed.WPF.Model;
+using GreenFeed.DataModel;
 
 namespace GreenFeed.WPF.Repository
 {
     public class FeedRepository : IFeedRepository
     {
-        public ObservableCollection<RssFeedInfo> RssFeeds { get; set; }
+        public ObservableCollection<RssInfo> RssFeeds { get; set; }
 
-        public FeedRepository(IList<RssFeedInfo> rssFeeds)
+        public FeedRepository(IList<RssInfo> rssInfo)
         {
-            RssFeeds = new ObservableCollection<RssFeedInfo>(rssFeeds);
+            RssFeeds = new ObservableCollection<RssInfo>(rssInfo);
         }
     }
 }

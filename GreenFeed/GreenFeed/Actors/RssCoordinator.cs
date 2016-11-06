@@ -24,7 +24,7 @@ namespace GreenFeed.Actors
 
         public void AddFeed(AddFeedCommand addFeedMessage, IActorRef sender)
         {
-            Props props = Props.Create<RssFeed>(new object[] { new RssInfo(addFeedMessage.Name, addFeedMessage.Url) });
+            Props props = Props.Create<RssFeed>(new object[] { new RssFeedData(new RssInfo(addFeedMessage.Name, addFeedMessage.Url)) });
             var feed = Context.ActorOf(props , addFeedMessage.Name);
             SubscribeFeedToUpdate(feed);
             _feeds.Add(feed);
@@ -39,11 +39,12 @@ namespace GreenFeed.Actors
 
         public void GetFeedList(IActorRef sender)
         {
+            _feeds.ForEach(f => f.Ask<GetFeedInfoAcknowledge>(new GetFeedInfoCommand()));
             GetFeedInfoAcknowledge ack = new GetFeedInfoAcknowledge();
             Sender.Tell(ack, Self);
         }
 
-        public RssInfo GetFeed()
+        public RssFeedData GetFeed()
         {
             throw new NotImplementedException();
         }

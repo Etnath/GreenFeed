@@ -69,7 +69,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\RssFeedInfo.cs" />
     <Compile Include="Repository\FeedRepository.cs" />
     <Compile Include="Repository\IFeedRepository.cs" />
     <Compile Include="ViewModel\AddRssWindowViewModel.cs" />
@@ -146,6 +145,9 @@
       <Project>{d294cbd0-d7a9-4170-a3a7-288d84fa47d5}</Project>
       <Name>GreenFeed</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

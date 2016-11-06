@@ -7,7 +7,7 @@ namespace GreenFeed.Winforms.RssSettingsEditor
         private RssSettingsEditorView _view;
         private RssSettingsEditorModel _model;
 
-        public RssSettingsEditorPresenter(RssInfo rssInfo)
+        public RssSettingsEditorPresenter(RssFeedData rssInfo)
         {
             _model = new RssSettingsEditorModel(rssInfo);
         }

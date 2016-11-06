@@ -4,9 +4,9 @@ namespace GreenFeed.Winforms.RssSettingsEditor
 {
     public class RssSettingsEditorModel
     {
-        RssInfo RssInfo { get; set; }
+        RssFeedData RssInfo { get; set; }
 
-        public RssSettingsEditorModel(RssInfo rssInfo)
+        public RssSettingsEditorModel(RssFeedData rssInfo)
         {
             RssInfo = rssInfo;
         }
