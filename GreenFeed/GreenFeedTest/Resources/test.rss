@@ -16,5 +16,13 @@
       <category>test</category>
       <description><![CDATA[Hello there]]></description>
     </item>
+    <item>
+      <title>test2</title>
+      <pubDate>Sat, 2 Apr 2016 16:48:24 +0200</pubDate>
+      <author>test.test@test.com</author>
+      <comments>warningm this is a test2.</comments>
+      <category>test</category>
+      <description><![CDATA[Hello there haha]]></description>
+    </item>
   </channel>
 </rss>

@@ -8,5 +8,11 @@ namespace GreenFeed.Messages.Commands
 {
     public class GetFeedContentCommand
     {
+        public string FeedName { get; private set; }
+
+        public GetFeedContentCommand(string feedName = null)
+        {
+            FeedName = feedName;
+        }
     }
 }

@@ -70,6 +70,7 @@
     <Compile Include="DataModel\RssInfo.cs" />
     <Compile Include="Messages\Acknowledge\Acknowledge.cs" />
     <Compile Include="Messages\Acknowledge\AddFeedAcknowledge.cs" />
+    <Compile Include="Messages\Acknowledge\GetFeedContentAcknowledge.cs" />
     <Compile Include="Messages\Acknowledge\GetFeedInfoAcknowledge.cs" />
     <Compile Include="Messages\Acknowledge\GetFeedListAcknowledge.cs" />
     <Compile Include="Messages\Acknowledge\IAcknowledge.cs" />

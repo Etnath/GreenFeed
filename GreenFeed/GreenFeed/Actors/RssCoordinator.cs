@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Akka.Actor;
 using Akka.Util.Internal;
 using GreenFeed.Messages.Acknowledge;
 using GreenFeed.Messages.Commands;
 using GreenFeed.DataModel;
+using System.Threading.Tasks;
 
 namespace GreenFeed.Actors
 {
@@ -19,7 +21,10 @@ namespace GreenFeed.Actors
             Receive<AddFeedCommand>(f => AddFeed(f, Sender));
             Receive<RemoveFeedCommand>(f => RemoveFeed(f, Sender));
             Receive<GetFeedListCommand>(f => GetFeedList(Sender));
+            Receive<GetFeedContentCommand>(f => GetFeedContent(f, Sender));
             Receive<Failure>(f => LogFailure(f, Sender));
+            
+
             SubscribeFeedsToUpdate();   
         }
 
@@ -67,9 +72,33 @@ namespace GreenFeed.Actors
                                                             Self);
         }
 
+        private void GetFeedContent(GetFeedContentCommand f, IActorRef sender)
+        {
+            if (f.FeedName != null)
+            {
+                var actor = _feeds.First(g => g.Path.Name == f.FeedName);
+                if (actor != null)
+                {
+                    var taskResult = actor.Ask<GetFeedContentAcknowledge>(f).Result;
+                    if (taskResult != null)
+                    {
+                        Sender.Tell(taskResult, Self);
+                    }
+                    else
+                    {
+                        //TODO : log
+                    }
+                }
+            }
+            else
+            {
+                //TODO : log
+            }
+        }
+
         private void LogFailure(Failure failure, IActorRef Sender)
         {
             Console.WriteLine(Sender.Path + " failed: " + failure.Exception.ToString());
-        }
+        }       
     }
 }
