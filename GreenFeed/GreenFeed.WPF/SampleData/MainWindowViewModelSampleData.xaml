@@ -1,0 +1,24 @@
+﻿<ViewModel:MainWindowViewModel xmlns:ViewModel="clr-namespace:GreenFeed.WPF.ViewModel" xmlns:DataModel="clr-namespace:GreenFeed.DataModel;assembly=GreenFeed" xmlns:Syndication="clr-namespace:System.ServiceModel.Syndication;assembly=System.ServiceModel" xmlns:System="clr-namespace:System;assembly=mscorlib">
+	<ViewModel:MainWindowViewModel.RssFeedInfo>
+		<DataModel:RssInfo Name="Vestibulum class" Url="Maecenas curabitur"/>
+		<DataModel:RssInfo Name="Aliquam adipiscing nam" Url="Aenean cras"/>
+		<DataModel:RssInfo Name="Duis praesent mauris accumsan" Url="Nunc curae sed"/>
+		<DataModel:RssInfo Name="Phasellus consequat" Url="Amet nullam"/>
+		<DataModel:RssInfo Name="Aptent donec integer convallis" Url="Dis etiam quisque"/>
+		<DataModel:RssInfo Name="Ante est hac vivamus parturient" Url="Leo aliquam auctor bibendum aliquet"/>
+		<DataModel:RssInfo Name="Arcu dignissim mus elementum" Url="Fusce congue diam"/>
+		<DataModel:RssInfo Name="Eget vestibulum facilisis" Url="Nec non cursus fermentum"/>
+		<DataModel:RssInfo Name="Dictum dictumst lectus elit blandit" Url="Fringilla habitasse eleifend enim"/>
+		<DataModel:RssInfo Name="Lorem vestibulum libero erat" Url="Facilisi faucibus morbi"/>
+	</ViewModel:MainWindowViewModel.RssFeedInfo>
+	<ViewModel:MainWindowViewModel.SelectedRss>
+		<DataModel:RssInfo Name="Per hendrerit commodo" Url="Conubia cubilia sed eros"/>
+	</ViewModel:MainWindowViewModel.SelectedRss>
+	<ViewModel:MainWindowViewModel.SelectedFeed>
+		<Syndication:SyndicationFeed Generator="Habitant nibh adipiscing" Id="Nulla inceptos nisi" Language="Dapibus egestas sem">
+			<Syndication:SyndicationFeed.LastUpdatedTime>
+				<System:DateTimeOffset/>
+			</Syndication:SyndicationFeed.LastUpdatedTime>
+		</Syndication:SyndicationFeed>
+	</ViewModel:MainWindowViewModel.SelectedFeed>
+</ViewModel:MainWindowViewModel>

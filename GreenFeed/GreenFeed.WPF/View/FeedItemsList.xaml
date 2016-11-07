@@ -1,0 +1,22 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GreenFeed.WPF.View"
+             xmlns:ViewModel="clr-namespace:GreenFeed.WPF.ViewModel" x:Class="GreenFeed.WPF.View.FeedItemsList"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="156.04">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="FeedItemsListBoxTemplate" TargetType="{x:Type ListBox}">
+            <TextBlock Text="{Binding Title.Text}"/>
+        </ControlTemplate>
+    </UserControl.Resources>
+    <ListBox ItemsSource="{Binding Mode=OneWay}" Template="{DynamicResource FeedItemsListBoxTemplate}">
+
+        <ListBox.DataContext>
+            <ViewModel:MainWindowViewModel/>
+        </ListBox.DataContext>
+
+    </ListBox>
+</UserControl>

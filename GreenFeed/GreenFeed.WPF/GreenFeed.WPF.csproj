@@ -50,6 +50,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -73,7 +74,9 @@
     <Compile Include="Repository\IFeedRepository.cs" />
     <Compile Include="ViewModel\AddRssWindowViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
-    <Compile Include="ViewModel\RssSettingsEditorViewModel.cs" />
+    <Compile Include="View\FeedItemsList.xaml.cs">
+      <DependentUpon>FeedItemsList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\RssFeedList.xaml.cs">
       <DependentUpon>RssFeedList.xaml</DependentUpon>
     </Compile>
@@ -95,6 +98,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\FeedItemsList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\RssFeedList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
