@@ -9,9 +9,9 @@ namespace GreenFeed.Messages.Acknowledge
 {
     public class QueryFeedAcknowledge : IAcknowledge
     {
-        public bool IsSuccess { get; }
-        public Status Status { get; }
-        public SyndicationFeed FeedData{ get; }
+        public bool IsSuccess { get; private set; }
+        public Status Status { get; private set; }
+        public SyndicationFeed FeedData{ get; private set; }
 
         public QueryFeedAcknowledge(bool isSuccess = true, Status status = Status.Ok, SyndicationFeed feedData = null)
         {

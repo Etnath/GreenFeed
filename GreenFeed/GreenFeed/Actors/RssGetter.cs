@@ -4,7 +4,7 @@ using Akka.Actor;
 using GreenFeed.Messages.Commands;
 using System.ServiceModel.Syndication;
 using GreenFeed.Messages.Acknowledge;
-using Status = GreenFeed.Messages.Acknowledge.Status;
+using Status = GreenFeed.Messages.Status;
 
 namespace GreenFeed.Actors
 {

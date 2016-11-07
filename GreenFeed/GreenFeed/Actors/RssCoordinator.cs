@@ -6,7 +6,6 @@ using Akka.Util.Internal;
 using GreenFeed.Messages.Acknowledge;
 using GreenFeed.Messages.Commands;
 using GreenFeed.DataModel;
-using System.Threading.Tasks;
 
 namespace GreenFeed.Actors
 {
@@ -24,7 +23,6 @@ namespace GreenFeed.Actors
             Receive<GetFeedContentCommand>(f => GetFeedContent(f, Sender));
             Receive<Failure>(f => LogFailure(f, Sender));
             
-
             SubscribeFeedsToUpdate();   
         }
 

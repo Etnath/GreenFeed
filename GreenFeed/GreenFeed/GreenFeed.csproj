@@ -65,7 +65,6 @@
     <Compile Include="Actors\RssCoordinator.cs" />
     <Compile Include="Actors\RssFeed.cs" />
     <Compile Include="Actors\RssGetter.cs" />
-    <Compile Include="Actors\RssParser.cs" />
     <Compile Include="DataModel\RssFeedData.cs" />
     <Compile Include="DataModel\RssInfo.cs" />
     <Compile Include="Messages\Acknowledge\Acknowledge.cs" />
@@ -76,7 +75,7 @@
     <Compile Include="Messages\Acknowledge\IAcknowledge.cs" />
     <Compile Include="Messages\Acknowledge\QueryFeedAcknowledge.cs" />
     <Compile Include="Messages\Acknowledge\RemoveFeedAcknowledge.cs" />
-    <Compile Include="Messages\Acknowledge\Status.cs" />
+    <Compile Include="Messages\Status.cs" />
     <Compile Include="Messages\Acknowledge\UpdateFeedAcknowledge.cs" />
     <Compile Include="Messages\Commands\AddFeedCommand.cs" />
     <Compile Include="Messages\Commands\GetFeedContentCommand.cs" />

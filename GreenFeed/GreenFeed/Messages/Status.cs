@@ -1,4 +1,4 @@
-﻿namespace GreenFeed.Messages.Acknowledge
+﻿namespace GreenFeed.Messages
 {
     public enum Status
     {
