@@ -15,7 +15,6 @@ namespace GreenFeed.WPF.ViewModel
     public class MainWindowViewModel : NotifyPropertyChangedBase
     {
         private IActorRef _rssCoordinator;
-        private IFeedRepository _repository;
 
         private ObservableCollection<RssInfo> _rssFeedinfo;
         public ObservableCollection<RssInfo> RssFeedInfo
@@ -53,13 +52,12 @@ namespace GreenFeed.WPF.ViewModel
             var _sys = ActorSystem.Create("test");
             Props rssCoordinatorProps = Props.Create<RssCoordinator>();
             _rssCoordinator = _sys.ActorOf(rssCoordinatorProps);
-            _repository = new FeedRepository(_rssCoordinator.Ask<GetFeedListAcknowledge>(new GetFeedListCommand()).Result.RssFeeds);
             RssFeedInfo = new ObservableCollection<RssInfo>();
         }
 
         public void AddFeed()
         {
-            AddRssWindowViewModel addRssVm = new AddRssWindowViewModel(_repository);
+            AddRssWindowViewModel addRssVm = new AddRssWindowViewModel();
             AddRssWindow window = new AddRssWindow();
             window.DataContext = addRssVm;
             if (window.ShowDialog().Value)

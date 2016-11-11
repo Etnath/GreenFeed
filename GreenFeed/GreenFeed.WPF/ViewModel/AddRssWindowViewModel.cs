@@ -6,8 +6,6 @@ namespace GreenFeed.WPF.ViewModel
 {
     public class AddRssWindowViewModel : NotifyPropertyChangedBase
     {
-        private IFeedRepository _repository;
-
         private string _rssName;
         public string RssName
         {
@@ -22,26 +20,10 @@ namespace GreenFeed.WPF.ViewModel
             set { _rssUrl = value; OnPropertyChanged(); }
         }
 
-        public AddRssWindowViewModel(IFeedRepository repository)
+        public AddRssWindowViewModel()
         {
             RssName = string.Empty;
             RssUrl = string.Empty;
-            _repository = repository;
-        }
-
-        public AddRssWindowViewModel()
-        {
-
-        }
-
-        public void Cancel()
-        {
-
-        }
-
-        public void Ok()
-        {
-            _repository?.RssFeeds.Add(new RssInfo() { Name = RssName, Url = RssUrl });
         }
     }
 }
