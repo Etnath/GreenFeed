@@ -15,5 +15,5 @@
     <UserControl.DataContext>
         <ViewModel:MainWindowViewModel/>
     </UserControl.DataContext>
-    <ListBox ItemsSource="{Binding SelectedFeed.Items}" ItemTemplate="{DynamicResource FeedItemTemplate}"/>
+    <ListBox ItemsSource="{Binding SelectedFeed.Items}" ItemTemplate="{DynamicResource FeedItemTemplate}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" />
 </UserControl>

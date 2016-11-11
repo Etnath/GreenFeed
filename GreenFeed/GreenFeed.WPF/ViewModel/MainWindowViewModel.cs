@@ -40,12 +40,33 @@ namespace GreenFeed.WPF.ViewModel
         }
 
         private NotifiedSyndicationFeed _selectedFeed;
-
         public NotifiedSyndicationFeed SelectedFeed
         {
             get { return _selectedFeed; }
-            set { _selectedFeed = value; OnPropertyChanged(); }
+            set
+            {
+                if (value != null
+                    && _selectedFeed != value)
+                {
+                    _selectedFeed = value;
+                    OnPropertyChanged();
+
+                    if (_selectedFeed.Items.Count > 0)
+                    {
+                        SelectedItem = _selectedFeed.Items[0];
+                    }
+                    
+                }              
+            }
         }
+
+        private NotifiedSyndicationItem _selectedItem;
+        public NotifiedSyndicationItem SelectedItem
+        {
+            get { return _selectedItem; }
+            set { _selectedItem = value; OnPropertyChanged(); }
+        }
+
 
         public MainWindowViewModel()
         {

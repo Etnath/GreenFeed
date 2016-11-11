@@ -63,7 +63,7 @@ namespace GreenFeed.Actors
 
         private void SubscribeFeedToUpdate(IActorRef actor)
         {
-            Context.System.Scheduler.ScheduleTellRepeatedly(TimeSpan.FromSeconds(1),
+            Context.System.Scheduler.ScheduleTellRepeatedly(TimeSpan.FromMilliseconds(1),
                                                             TimeSpan.FromMinutes(1),
                                                             actor,
                                                             new UpdateFeedCommand(),
