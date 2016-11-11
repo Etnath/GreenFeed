@@ -77,6 +77,7 @@ namespace GreenFeed.Actors
                 var actor = _feeds.First(g => g.Path.Name == f.FeedName);
                 if (actor != null)
                 {
+                    actor.Tell(new UpdateFeedCommand(), Self);
                     var taskResult = actor.Ask<GetFeedContentAcknowledge>(f).Result;
                     if (taskResult != null)
                     {

@@ -14,6 +14,8 @@ namespace GreenFeed.WPF
         {
             InitializeComponent();
             RssFeedList.DataContext = this.DataContext;
+            FeedItemsList.DataContext = this.DataContext;
+            RssPage.DataContext = this.DataContext;
         }
     }
 }

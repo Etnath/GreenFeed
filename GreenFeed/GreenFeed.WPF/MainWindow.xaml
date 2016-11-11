@@ -23,7 +23,15 @@
                 </MenuItem>
             </MenuItem>
         </Menu>
-        <view:RssFeedList x:Name="RssFeedList" DockPanel.Dock="Left"/>
-        <view:RssPage x:Name="RssPage" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" MinWidth="150"/>
+                <ColumnDefinition Width="Auto" MinWidth="150"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <view:RssFeedList x:Name="RssFeedList"/>
+            <view:FeedItemsList Grid.Column="1" x:Name="FeedItemsList"/>
+            <view:RssPage x:Name="RssPage" Grid.Column="2" />
+        </Grid>
     </DockPanel>
 </Window>

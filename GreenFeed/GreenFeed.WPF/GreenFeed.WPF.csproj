@@ -70,6 +70,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\NotifiedSyndicationFeed.cs" />
+    <Compile Include="Model\NotifiedSyndicationItem.cs" />
     <Compile Include="Repository\FeedRepository.cs" />
     <Compile Include="Repository\IFeedRepository.cs" />
     <Compile Include="ViewModel\AddRssWindowViewModel.cs" />
@@ -153,9 +155,7 @@
       <Name>GreenFeed</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

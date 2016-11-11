@@ -4,6 +4,7 @@ using GreenFeed.DataModel;
 using GreenFeed.Messages.Acknowledge;
 using GreenFeed.Messages.Commands;
 using GreenFeed.Utilities;
+using GreenFeed.WPF.Model;
 using GreenFeed.WPF.Repository;
 using GreenFeed.WPF.View;
 using System.Collections.ObjectModel;
@@ -39,9 +40,9 @@ namespace GreenFeed.WPF.ViewModel
             }
         }
 
-        private SyndicationFeed _selectedFeed;
+        private NotifiedSyndicationFeed _selectedFeed;
 
-        public SyndicationFeed SelectedFeed
+        public NotifiedSyndicationFeed SelectedFeed
         {
             get { return _selectedFeed; }
             set { _selectedFeed = value; OnPropertyChanged(); }
@@ -71,7 +72,11 @@ namespace GreenFeed.WPF.ViewModel
         public void UpdateCurrentFeed()
         {
             var taskResult = _rssCoordinator.Ask<GetFeedContentAcknowledge>(new GetFeedContentCommand(SelectedRss.Name)).Result;
-            SelectedFeed = taskResult.FeedData;
+            if (taskResult.FeedData != null)
+            {
+                SelectedFeed = new NotifiedSyndicationFeed(taskResult.FeedData);
+            }
+            
         }
     }
 }

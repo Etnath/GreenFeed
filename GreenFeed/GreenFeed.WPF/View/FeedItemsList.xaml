@@ -8,15 +8,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="156.04">
     <UserControl.Resources>
-        <ControlTemplate x:Key="FeedItemsListBoxTemplate" TargetType="{x:Type ListBox}">
-            <TextBlock Text="{Binding Title.Text}"/>
-        </ControlTemplate>
+        <DataTemplate x:Key="FeedItemTemplate">
+            <TextBlock Text="{Binding Title}"/>
+        </DataTemplate>
     </UserControl.Resources>
-    <ListBox ItemsSource="{Binding Mode=OneWay}" Template="{DynamicResource FeedItemsListBoxTemplate}">
-
-        <ListBox.DataContext>
-            <ViewModel:MainWindowViewModel/>
-        </ListBox.DataContext>
-
-    </ListBox>
+    <UserControl.DataContext>
+        <ViewModel:MainWindowViewModel/>
+    </UserControl.DataContext>
+    <ListBox ItemsSource="{Binding SelectedFeed.Items}" ItemTemplate="{DynamicResource FeedItemTemplate}"/>
 </UserControl>
