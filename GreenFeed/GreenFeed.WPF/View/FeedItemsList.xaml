@@ -11,9 +11,10 @@
         <DataTemplate x:Key="FeedItemTemplate">
             <TextBlock Text="{Binding Title}"/>
         </DataTemplate>
+        
     </UserControl.Resources>
     <UserControl.DataContext>
         <ViewModel:MainWindowViewModel/>
     </UserControl.DataContext>
-    <ListBox ItemsSource="{Binding SelectedFeed.Items}" ItemTemplate="{DynamicResource FeedItemTemplate}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" />
+    <ListBox ItemsSource="{Binding SelectedFeed.Items}" ItemTemplate="{DynamicResource FeedItemTemplate}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" Background="{DynamicResource SecondaryBackgroundColor}" Foreground="{DynamicResource MainForegroundColor}" BorderBrush="{DynamicResource MainBorderColor}" BorderThickness="0.6" Margin="0" Padding="3" />
 </UserControl>

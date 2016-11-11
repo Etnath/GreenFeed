@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:GreenFeed.WPF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush x:Key="MainBackgroundColor" Color="#FF1A1D1B"/>
+        <SolidColorBrush x:Key="SecondaryBackgroundColor" Color="#FF101110"/>
+        <SolidColorBrush x:Key="MainForegroundColor" Color="#FFB8C1BB"/>
+        <SolidColorBrush x:Key="MainBorderColor" Color="#FF5A6460"/>
+        <Style x:Key="MainStyle" TargetType="UserControl">
+            <Setter Property="Margin" Value="3" />
+        </Style>
     </Application.Resources>
 </Application>

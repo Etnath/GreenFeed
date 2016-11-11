@@ -16,5 +16,5 @@
         <ViewModel:MainWindowViewModel/>
     </UserControl.DataContext>
 
-    <ListBox ItemsSource="{Binding RssFeedInfo}" SelectedItem="{Binding SelectedRss}" ItemTemplate="{DynamicResource FeedListItemTemplate}"/>
+    <ListBox ItemsSource="{Binding RssFeedInfo}" SelectedItem="{Binding SelectedRss}" ItemTemplate="{DynamicResource FeedListItemTemplate}" Background="{DynamicResource SecondaryBackgroundColor}" Margin="0" Foreground="{DynamicResource MainForegroundColor}" BorderThickness="0.6" BorderBrush="{DynamicResource MainBorderColor}" Padding="3"/>
 </UserControl>
