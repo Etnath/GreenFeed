@@ -1,4 +1,6 @@
-﻿using Akka.Actor;
+﻿using System;
+using System.Threading.Tasks;
+using Akka.Actor;
 using GreenFeed.DataModel;
 using GreenFeed.Messages.Acknowledge;
 using GreenFeed.Messages.Commands;
@@ -19,6 +21,7 @@ namespace GreenFeed.Actors
             Receive<UpdateFeedCommand>(f => Update(f, Sender));
             Receive<QueryFeedAcknowledge>(f => UpdateFeed(f, Sender));
             Receive<GetFeedInfoCommand>(f => GetFeedInfo(f, Sender));
+            Receive<GetFeedContentCommand>(f => GetFeedContent(f, Sender));
 
             RssData = new RssFeedData(rssInfo);
         }
@@ -50,6 +53,11 @@ namespace GreenFeed.Actors
         private void GetFeedInfo(GetFeedInfoCommand getFeedInfoCommand, IActorRef sender)
         {
             sender.Tell(new GetFeedInfoAcknowledge(RssData.RssInfo), Self);
+        }
+
+        private void GetFeedContent(GetFeedContentCommand f, IActorRef sender)
+        {
+            sender.Tell(new GetFeedContentAcknowledge(RssData.FeedData),Self);
         }
     }
 }

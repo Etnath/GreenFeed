@@ -65,17 +65,17 @@
     <Compile Include="Actors\RssCoordinator.cs" />
     <Compile Include="Actors\RssFeed.cs" />
     <Compile Include="Actors\RssGetter.cs" />
-    <Compile Include="Actors\RssParser.cs" />
     <Compile Include="DataModel\RssFeedData.cs" />
     <Compile Include="DataModel\RssInfo.cs" />
     <Compile Include="Messages\Acknowledge\Acknowledge.cs" />
     <Compile Include="Messages\Acknowledge\AddFeedAcknowledge.cs" />
+    <Compile Include="Messages\Acknowledge\GetFeedContentAcknowledge.cs" />
     <Compile Include="Messages\Acknowledge\GetFeedInfoAcknowledge.cs" />
     <Compile Include="Messages\Acknowledge\GetFeedListAcknowledge.cs" />
     <Compile Include="Messages\Acknowledge\IAcknowledge.cs" />
     <Compile Include="Messages\Acknowledge\QueryFeedAcknowledge.cs" />
     <Compile Include="Messages\Acknowledge\RemoveFeedAcknowledge.cs" />
-    <Compile Include="Messages\Acknowledge\Status.cs" />
+    <Compile Include="Messages\Status.cs" />
     <Compile Include="Messages\Acknowledge\UpdateFeedAcknowledge.cs" />
     <Compile Include="Messages\Commands\AddFeedCommand.cs" />
     <Compile Include="Messages\Commands\GetFeedContentCommand.cs" />
@@ -108,7 +108,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\GreenFeed.Utilities\GreenFeed.Utilities.csproj">
+      <Project>{86a2924e-e942-4352-a6a7-bdcaa734d75c}</Project>
+      <Name>GreenFeed.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

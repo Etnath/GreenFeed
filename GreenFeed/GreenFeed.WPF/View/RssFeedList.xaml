@@ -7,6 +7,14 @@
              xmlns:ViewModel="clr-namespace:GreenFeed.WPF.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="654" d:DesignWidth="300" MinWidth="300">
+    <UserControl.Resources>
+        <DataTemplate x:Key="FeedListItemTemplate">
+            <TextBlock Text="{Binding Name}"/>
+        </DataTemplate>
+    </UserControl.Resources>
+    <UserControl.DataContext>
+        <ViewModel:MainWindowViewModel/>
+    </UserControl.DataContext>
 
-    <ListBox ItemsSource="{Binding RssFeedInfo, Mode=TwoWay}" MinWidth="300"/>
+    <ListBox ItemsSource="{Binding RssFeedInfo}" MinWidth="300" SelectedItem="{Binding SelectedRss}" ItemTemplate="{DynamicResource FeedListItemTemplate}"/>
 </UserControl>

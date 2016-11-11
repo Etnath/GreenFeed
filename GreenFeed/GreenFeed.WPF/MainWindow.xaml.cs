@@ -13,6 +13,7 @@ namespace GreenFeed.WPF
         public MainWindow()
         {
             InitializeComponent();
+            RssFeedList.DataContext = this.DataContext;
         }
     }
 }

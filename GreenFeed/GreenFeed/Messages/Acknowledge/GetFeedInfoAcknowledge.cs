@@ -9,7 +9,7 @@ namespace GreenFeed.Messages.Acknowledge
 {
     public class GetFeedInfoAcknowledge
     {
-        public RssInfo RssFeed {get; set;}
+        public RssInfo RssFeed {get; private set;}
 
         public GetFeedInfoAcknowledge(RssInfo rssFeed = null)
         {
