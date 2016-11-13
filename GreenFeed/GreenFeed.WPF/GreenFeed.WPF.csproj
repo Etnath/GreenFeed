@@ -70,6 +70,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Dependencies\BrowserBindableProperties.cs" />
     <Compile Include="Model\NotifiedSyndicationFeed.cs" />
     <Compile Include="Model\NotifiedSyndicationItem.cs" />
     <Compile Include="Repository\FeedRepository.cs" />
